@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         final boolean backPressed = getIntent().getBooleanExtra(SecondActivity.BACK_KEY, false);
+        System.out.println("Back Pressed: " + backPressed);
         if (backPressed) {
             Snackbar.make(mListView, "Item Added To Cart", Snackbar.LENGTH_LONG).show();
         }
