@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView mListView;
     private ItemListAdapter adapter;
+    private List<Item> items = generateItems();
 
     public final static String SELECTED_ITEM_KEY = "selectedItem";
 
@@ -28,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
         mListView = findViewById(R.id.listview_items);
 
-        final List<Item> items = generateItems();
         adapter = new ItemListAdapter(MainActivity.this, items);
         mListView.setAdapter(adapter);
 
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         possibleNames.add("Milk");
         possibleNames.add("Eggs");
 
-        final Random rand = new Random();
+        final Random rand = new Random(0);
 
         final List<Item> items = new ArrayList<>();
         // Generate 10 random items
